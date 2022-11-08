@@ -1,38 +1,82 @@
-.App {
+.calc {
+  margin: 50px auto;
+  width: 400px;
+  height: 570px;
+  /*border: 1px solid #000;*/
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  font-family: Arial;
+  padding: 18px;
+  box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+.calc-screen {
+  height: 125px;
+  padding: 10px;
+  display: grid;
+  justify-items: end;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.calc-screen p {
+  text-align: right;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-areas:
+          "ac mc mr m-plus m-minus division"
+          "x2 x3 ac2 plus-minus percent multiply"
+          "2r 3r seven eigth nine minus"
+          "xy 10x four five six plus"
+          "xyr one-devide-x one two three equal"
+          "factorial func zero zero dot equal";
+  grid-gap: 7px;
+  justify-items: center;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 50%;
   text-align: center;
+  line-height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn.zero {
+  grid-area: zero;
+  width: 100%;
+  border-radius: 34px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn.equal {
+  grid-area: equal;
+  height: 100%;
+  border-radius: 34px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn:hover {
+  filter: brightness(120%);
+}
+.btn:active {
+  filter: brightness(90%);
 }
 
-.App-link {
-  color: #61dafb;
-}
+.btn.bg-gray {
+  background-color: #a6a6a6;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}.btn.bg-red {
+   background-color: darkred;
+ }
+
+.btn.bg-orange {
+  background-color: #ff9501;
 }
